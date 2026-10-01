@@ -1,7 +1,7 @@
 # Assignment 1: Text Generation and Word Embedding API
 
 **Student: Liuyang Li**  
-**Course: Applied Generative AI, Fall 2026**
+**UNI: ll3980**
 
 This project adds the spaCy word embedding operation from Module 2 to the FastAPI text generation application from Module 3. The original `POST /generate` endpoint remains available. The new `POST /embedding` endpoint accepts one query word and returns its complete pretrained vector; `GET /embedding?word=apple` supports the same operation through a query parameter. The project includes a Docker deployment, locked dependencies, API tests, and a GitHub Actions workflow that builds and queries the container.
 
@@ -117,31 +117,3 @@ uv run python scripts/check_api.py --base-url http://127.0.0.1:8000
 | `examples/` | Responses captured from the running API |
 | `.github/workflows/docker-api.yml` | Automated Docker build and HTTP checks on GitHub |
 | `VALIDATION.md` | Recorded verification results and remaining deployment checks |
-
-## Rubric coverage
-
-| Criterion | Submitted material or verification |
-| --- | --- |
-| New code committed to GitHub (10 points) | Commit this project to the student's GitHub repository and submit its URL |
-| Docker deployment on the instructor's machine (20 points) | Dockerfile, Compose configuration, model installed in the image, and documented build/start commands |
-| Queryable algorithm or model (20 points) | GET/POST word embedding endpoints, the original generator, Swagger UI, and live API check script |
-| Organization and functionality (20 points) | Separate API/model modules, schemas, error handling, locked dependencies, tests, and documentation |
-| Correct probability calculations (30 points) | Separate probability solutions PDF containing all six questions and derivations |
-
-## GitHub and CourseWorks submission
-
-Commit the contents of this project directory to GitHub, including `app/`, `scripts/`, `tests/`, `examples/`, `.github/`, the Docker files, dependency files, and documentation. The instructor should be able to open the source files directly and run the Docker commands from the repository root. Ensure that the instructor can access the repository.
-
-The GitHub Actions workflow runs after a push when Actions is enabled for the repository. Review **Actions > Docker API checks** and confirm the workflow succeeds. A workflow file by itself is not evidence of a successful Docker run; the workflow run must pass.
-
-Submit the probability solutions PDF through CourseWorks and provide the actual GitHub repository URL in the submission field or comment required by the course. The code's GitHub commit and the CourseWorks submission must be completed in the student's accounts.
-
-## References
-
-- Module 2 Practical 3: Word Embeddings, supplied course material.
-- Module 2 Practical 2: Word Sampling, supplied course material.
-- Module 3 Activity: First Docker/FastAPI Project Setup and Simple Text Generator, supplied course material.
-- [spaCy vectors and similarity](https://spacy.io/usage/linguistic-features#vectors-similarity).
-- [FastAPI request bodies](https://fastapi.tiangolo.com/tutorial/body/).
-- [uv in Docker](https://docs.astral.sh/uv/guides/integration/docker/).
-- [Docker Compose startup](https://docs.docker.com/reference/cli/docker/compose/up/).
